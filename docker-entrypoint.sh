@@ -9,7 +9,7 @@ data_dir="${SUBMIN_DATA_DIR:-/var/lib/submin}"
 svn_repo="${SUBMIN_SVN_DIR:-/var/lib/svn}"
 admin_mail="${SUBMIN_ADMIN_MAIL:-root@submin.local}"
 
-if [ ! -e ${data_dir} ]; then
+if [ ! -e ${data_dir}/conf ]; then
     echo -e "svn\n${svn_repo}\n${hostname}:${external_port}\n\n\n" \
         | submin2-admin ${data_dir} initenv ${admin_mail} >/dev/null
 
